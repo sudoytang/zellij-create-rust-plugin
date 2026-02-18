@@ -101,6 +101,9 @@ impl ZellijPlugin for State {
                             self.sequential_commands_to_run.run_next_commnand();
                         }
                     }
+                    BareKey::Esc if key.has_no_modifiers() => {
+                        close_self();
+                    }
                     _ => {}
                 }
             }
@@ -326,4 +329,3 @@ impl State {
         }
     }
 }
-
